@@ -41,13 +41,13 @@ class NetworkManager: NetworkManagerProtocol {
                           "hash": "\(md5DataHex)",
                           "offset": "\(offset)"]
   
-//        group.enter()
+        group.enter()
         
         AF.request("http://gateway.marvel.com/v1/public/characters?orderBy=name&limit=10",
                    method: .get,
                    parameters: parameters).validate().responseJSON  { response in
                     
-//                    self.group.leave()
+                    self.group.leave()
                     switch response.result {
                     case .success(let data):
                         self.unwrapJson(data: data)
@@ -95,9 +95,9 @@ class NetworkManager: NetworkManagerProtocol {
         
     func downloadImage(from url: URL) -> Data {
         var imageData: Data?
-//        group.enter()
+        group.enter()
         imageData = try? Data(contentsOf: url)
-//        self.group.leave()
+        self.group.leave()
         return imageData ?? Data()
     }
 }

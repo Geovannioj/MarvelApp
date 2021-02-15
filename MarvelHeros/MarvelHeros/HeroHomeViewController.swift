@@ -15,7 +15,7 @@ class HeroHomeViewController: UIViewController {
     var heros: [HeroModel] = [HeroModel]()
     let xibCellId = "heroCell"
     var offset = 0
-    let callDataAtOffset = 1
+    let callDataAtOffset = 5
     let tableViewCellHeight = 200
     let networkManager: NetworkManagerProtocol = NetworkManager()
     
@@ -66,6 +66,7 @@ extension HeroHomeViewController: UITableViewDelegate, UITableViewDataSource {
         if let data = self.heros[indexPath.row].imageData {
             cell.heroImgView.image = UIImage(data: data)
         }
+        cell.setAccessibility()
         return cell
     }
     
