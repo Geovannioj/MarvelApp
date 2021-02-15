@@ -15,14 +15,14 @@ enum ResultStatus {
 }
 
 protocol NetworkManagerProtocol {
-    
+    var resultHeros: [HeroModel] { get }
     func requestData(completionHandler: @escaping ((ResultStatus,[HeroModel]?) -> Void))
     func downloadImage(from url: URL) -> Data
 }
 
 class NetworkManager: NetworkManagerProtocol {
     
-    private var result: [HeroModel] = [HeroModel]()
+    var resultHeros: [HeroModel] = [HeroModel]()
     private let publicKey: String = "4aedd955fbdad2c757b38f4b1f6e0d12"
     private let privateKey: String = "3651d395ae9b0cd14cc9130ebacc47dc3f6488e5"
     private var timeStemp: String = "1"
@@ -42,7 +42,7 @@ class NetworkManager: NetworkManagerProtocol {
   
         group.enter()
         
-        AF.request("https://gateway.marvel.com:443/v1/public/characters?orderBy=name&limit=1",
+        AF.request("https://gateway.marvel.com:443/v1/public/characters?orderBy=name&limit=10",
                    method: .get,
                    parameters: parameters).validate().responseJSON  { response in
                     
@@ -50,7 +50,7 @@ class NetworkManager: NetworkManagerProtocol {
                     switch response.result {
                     case .success(let data):
                         self.unwrapJson(data: data)
-                        completionHandler(.success, self.result)
+                        completionHandler(.success, self.resultHeros)
                     case .failure(let error):
                         completionHandler(.failure, nil)
                         print(error)
@@ -86,7 +86,7 @@ class NetworkManager: NetworkManagerProtocol {
                         hero.imageData = imgData
                     }
 
-                self.result.append(hero)
+                self.resultHeros.append(hero)
             }
         }
     }
