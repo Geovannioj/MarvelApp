@@ -18,6 +18,11 @@
 		D4A2B19525D9D1D500A850FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A2B19325D9D1D500A850FD /* LaunchScreen.storyboard */; };
 		D4A2B1A025D9D1D500A850FD /* MarvelHerosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B19F25D9D1D500A850FD /* MarvelHerosTests.swift */; };
 		D4A2B1AB25D9D1D500A850FD /* MarvelHerosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1AA25D9D1D500A850FD /* MarvelHerosUITests.swift */; };
+		D4A2B1BF25D9E02500A850FD /* MarvelResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D4A2B1BE25D9E02500A850FD /* MarvelResponse.json */; };
+		D4A2B1C125D9E96400A850FD /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1C025D9E96400A850FD /* HeroModel.swift */; };
+		D4A2B1C325D9F9B100A850FD /* HeroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1C225D9F9B100A850FD /* HeroViewModel.swift */; };
+		D4A2B1C525DA036A00A850FD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1C425DA036A00A850FD /* NetworkManager.swift */; };
+		D4A2B1C725DA046E00A850FD /* MD5Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1C625DA046E00A850FD /* MD5Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		D4A2B1A625D9D1D500A850FD /* MarvelHerosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelHerosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A2B1AA25D9D1D500A850FD /* MarvelHerosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHerosUITests.swift; sourceTree = "<group>"; };
 		D4A2B1AC25D9D1D500A850FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4A2B1BE25D9E02500A850FD /* MarvelResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MarvelResponse.json; sourceTree = "<group>"; };
+		D4A2B1C025D9E96400A850FD /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
+		D4A2B1C225D9F9B100A850FD /* HeroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewModel.swift; sourceTree = "<group>"; };
+		D4A2B1C425DA036A00A850FD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D4A2B1C625DA046E00A850FD /* MD5Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Manager.swift; sourceTree = "<group>"; };
 		D5E5927EAFA7653450B4D149 /* Pods-MarvelHerosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHerosTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelHerosTests/Pods-MarvelHerosTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,13 +149,15 @@
 		D4A2B18725D9D1D200A850FD /* MarvelHeros */ = {
 			isa = PBXGroup;
 			children = (
-				D4A2B1B825D9D36C00A850FD /* Localizer */,
-				D4A2B1BD25D9D39D00A850FD /* Coordinator */,
+				D4A2B1BD25D9D39D00A850FD /* NetworkManager */,
 				D4A2B1B925D9D37300A850FD /* Model */,
 				D4A2B1BA25D9D37800A850FD /* View */,
 				D4A2B1BB25D9D38100A850FD /* ViewModel */,
 				D4A2B1BC25D9D38B00A850FD /* Infra */,
 				D4A2B19125D9D1D500A850FD /* Assets.xcassets */,
+				D4A2B18E25D9D1D200A850FD /* Main.storyboard */,
+				D4A2B19325D9D1D500A850FD /* LaunchScreen.storyboard */,
+				D4A2B1BE25D9E02500A850FD /* MarvelResponse.json */,
 				D4A2B19625D9D1D500A850FD /* Info.plist */,
 			);
 			path = MarvelHeros;
@@ -169,16 +181,10 @@
 			path = MarvelHerosUITests;
 			sourceTree = "<group>";
 		};
-		D4A2B1B825D9D36C00A850FD /* Localizer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Localizer;
-			sourceTree = "<group>";
-		};
 		D4A2B1B925D9D37300A850FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2B1C025D9E96400A850FD /* HeroModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,8 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				D4A2B18C25D9D1D200A850FD /* ViewController.swift */,
-				D4A2B18E25D9D1D200A850FD /* Main.storyboard */,
-				D4A2B19325D9D1D500A850FD /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +200,7 @@
 		D4A2B1BB25D9D38100A850FD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2B1C225D9F9B100A850FD /* HeroViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -205,15 +210,17 @@
 			children = (
 				D4A2B18825D9D1D200A850FD /* AppDelegate.swift */,
 				D4A2B18A25D9D1D200A850FD /* SceneDelegate.swift */,
+				D4A2B1C625DA046E00A850FD /* MD5Manager.swift */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
 		};
-		D4A2B1BD25D9D39D00A850FD /* Coordinator */ = {
+		D4A2B1BD25D9D39D00A850FD /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2B1C425DA036A00A850FD /* NetworkManager.swift */,
 			);
-			path = Coordinator;
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +234,7 @@
 				D4A2B18125D9D1D200A850FD /* Sources */,
 				D4A2B18225D9D1D200A850FD /* Frameworks */,
 				D4A2B18325D9D1D200A850FD /* Resources */,
+				C84890B2F52D2BDCAC310798 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,6 +272,7 @@
 				D4A2B1A225D9D1D500A850FD /* Sources */,
 				D4A2B1A325D9D1D500A850FD /* Frameworks */,
 				D4A2B1A425D9D1D500A850FD /* Resources */,
+				44F5747930A21353AF6C4607 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A2B19525D9D1D500A850FD /* LaunchScreen.storyboard in Resources */,
+				D4A2B1BF25D9E02500A850FD /* MarvelResponse.json in Resources */,
 				D4A2B19225D9D1D500A850FD /* Assets.xcassets in Resources */,
 				D4A2B19025D9D1D200A850FD /* Main.storyboard in Resources */,
 			);
@@ -366,6 +376,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44F5747930A21353AF6C4607 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelHeros-MarvelHerosUITests/Pods-MarvelHeros-MarvelHerosUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelHeros-MarvelHerosUITests/Pods-MarvelHeros-MarvelHerosUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarvelHeros-MarvelHerosUITests/Pods-MarvelHeros-MarvelHerosUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91F4D3042786F8A055ACD905 /* [CP] Check Pods Manifest.lock */ = {
@@ -412,6 +439,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C84890B2F52D2BDCAC310798 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelHeros/Pods-MarvelHeros-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelHeros/Pods-MarvelHeros-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarvelHeros/Pods-MarvelHeros-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -419,9 +463,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A2B1C525DA036A00A850FD /* NetworkManager.swift in Sources */,
 				D4A2B18D25D9D1D200A850FD /* ViewController.swift in Sources */,
+				D4A2B1C125D9E96400A850FD /* HeroModel.swift in Sources */,
 				D4A2B18925D9D1D200A850FD /* AppDelegate.swift in Sources */,
+				D4A2B1C725DA046E00A850FD /* MD5Manager.swift in Sources */,
 				D4A2B18B25D9D1D200A850FD /* SceneDelegate.swift in Sources */,
+				D4A2B1C325D9F9B100A850FD /* HeroViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

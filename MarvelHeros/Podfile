@@ -6,7 +6,7 @@ target 'MarvelHeros' do
   use_frameworks!
 
   # Pods for MarvelHeros
-
+  pod 'Alamofire', '~> 5.2'
   target 'MarvelHerosTests' do
     inherit! :search_paths
     # Pods for testing
