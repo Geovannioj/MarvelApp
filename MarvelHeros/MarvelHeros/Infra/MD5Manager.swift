@@ -30,9 +30,4 @@ class MD5Manager{
             }
             return digestData
         }
-
-    //Test usage:
-//    let md5Data = MD5(string:"13651d395ae9b0cd14cc9130ebacc47dc3f6488e54aedd955fbdad2c757b38f4b1f6e0d12")
-//
-//    let md5Hex =  md5Data.map { String(format: "%02hhx", $0) }.joined()
 }

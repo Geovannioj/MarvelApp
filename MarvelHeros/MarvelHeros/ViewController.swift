@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let networkManager: NetworkManagerProtocol = NetworkManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        networkManager.requestData { (responseStatus, model) in
+            print(responseStatus)
+            print(model?[0].name)
+        }
         if let path = Bundle.main.path(forResource: "MarvelResponse", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
