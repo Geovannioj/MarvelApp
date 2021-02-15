@@ -24,6 +24,8 @@
 		D4A2B1C725DA046E00A850FD /* MD5Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1C625DA046E00A850FD /* MD5Manager.swift */; };
 		D4A2B1CB25DA330A00A850FD /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1C925DA330A00A850FD /* HeroTableViewCell.swift */; };
 		D4A2B1CC25DA330A00A850FD /* HeroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A2B1CA25DA330A00A850FD /* HeroTableViewCell.xib */; };
+		D4A2B1D025DACD7000A850FD /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1CE25DACD7000A850FD /* HeroCollectionViewCell.swift */; };
+		D4A2B1D125DACD7000A850FD /* HeroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A2B1CF25DACD7000A850FD /* HeroCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		D4A2B1C625DA046E00A850FD /* MD5Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Manager.swift; sourceTree = "<group>"; };
 		D4A2B1C925DA330A00A850FD /* HeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewCell.swift; sourceTree = "<group>"; };
 		D4A2B1CA25DA330A00A850FD /* HeroTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroTableViewCell.xib; sourceTree = "<group>"; };
+		D4A2B1CE25DACD7000A850FD /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
+		D4A2B1CF25DACD7000A850FD /* HeroCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCollectionViewCell.xib; sourceTree = "<group>"; };
 		D5E5927EAFA7653450B4D149 /* Pods-MarvelHerosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHerosTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelHerosTests/Pods-MarvelHerosTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +197,7 @@
 		D4A2B1BA25D9D37800A850FD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2B1CD25DACD5200A850FD /* HeroCollectionViewCell */,
 				D4A2B1C825DA32F700A850FD /* HeroTableViewCell */,
 				D4A2B18C25D9D1D200A850FD /* HeroHomeViewController.swift */,
 			);
@@ -224,6 +229,15 @@
 				D4A2B1CA25DA330A00A850FD /* HeroTableViewCell.xib */,
 			);
 			path = HeroTableViewCell;
+			sourceTree = "<group>";
+		};
+		D4A2B1CD25DACD5200A850FD /* HeroCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D4A2B1CE25DACD7000A850FD /* HeroCollectionViewCell.swift */,
+				D4A2B1CF25DACD7000A850FD /* HeroCollectionViewCell.xib */,
+			);
+			path = HeroCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +353,7 @@
 				D4A2B1BF25D9E02500A850FD /* MarvelResponse.json in Resources */,
 				D4A2B1CC25DA330A00A850FD /* HeroTableViewCell.xib in Resources */,
 				D4A2B19225D9D1D500A850FD /* Assets.xcassets in Resources */,
+				D4A2B1D125DACD7000A850FD /* HeroCollectionViewCell.xib in Resources */,
 				D4A2B19025D9D1D200A850FD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +486,7 @@
 				D4A2B18D25D9D1D200A850FD /* HeroHomeViewController.swift in Sources */,
 				D4A2B1C125D9E96400A850FD /* HeroModel.swift in Sources */,
 				D4A2B18925D9D1D200A850FD /* AppDelegate.swift in Sources */,
+				D4A2B1D025DACD7000A850FD /* HeroCollectionViewCell.swift in Sources */,
 				D4A2B1C725DA046E00A850FD /* MD5Manager.swift in Sources */,
 				D4A2B1CB25DA330A00A850FD /* HeroTableViewCell.swift in Sources */,
 				D4A2B18B25D9D1D200A850FD /* SceneDelegate.swift in Sources */,
