@@ -17,6 +17,7 @@ enum ResultStatus {
 protocol NetworkManagerProtocol {
     var resultHeros: [HeroModel] { get }
     func requestData(offset: Int,completionHandler: @escaping ((ResultStatus,[HeroModel]?) -> Void))
+    func unwrapJson(data: Any) 
     func downloadImage(from url: URL) -> Data
 }
 
@@ -73,7 +74,7 @@ class NetworkManager: NetworkManagerProtocol {
         
     }
     
-    private func unwrapJson(data: Any) {
+    func unwrapJson(data: Any) {
         if let jsonResult = data as? [String: AnyObject] {
             let dataContent = jsonResult["data"]!["results"]! as? [AnyObject]
             for heroContent in dataContent! {

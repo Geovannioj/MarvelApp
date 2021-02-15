@@ -28,8 +28,10 @@
 		D4A2B1D125DACD7000A850FD /* HeroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A2B1CF25DACD7000A850FD /* HeroCollectionViewCell.xib */; };
 		D4A2B1D425DAE23B00A850FD /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1D325DAE23B00A850FD /* HeroDetailViewController.swift */; };
 		D4A2B1D625DAE28100A850FD /* HeroDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A2B1D525DAE28100A850FD /* HeroDetailView.xib */; };
-		D4A2B1DA25DAE53000A850FD /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1D925DAE53000A850FD /* BaseCoordinator.swift */; };
-		D4A2B1DD25DAE56200A850FD /* HeroDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1DC25DAE56200A850FD /* HeroDetailCoordinator.swift */; };
+		D4A2B1E025DAFE8200A850FD /* MD5ManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1DF25DAFE8200A850FD /* MD5ManagerTest.swift */; };
+		D4A2B1E325DB006100A850FD /* NetworkManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1E225DB006100A850FD /* NetworkManagerTest.swift */; };
+		D4A2B1E625DB053D00A850FD /* HeroDetailViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1E525DB053D00A850FD /* HeroDetailViewTest.swift */; };
+		D4A2B1E825DB066600A850FD /* HeroHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B1E725DB066600A850FD /* HeroHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +84,10 @@
 		D4A2B1CF25DACD7000A850FD /* HeroCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCollectionViewCell.xib; sourceTree = "<group>"; };
 		D4A2B1D325DAE23B00A850FD /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		D4A2B1D525DAE28100A850FD /* HeroDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailView.xib; sourceTree = "<group>"; };
-		D4A2B1D925DAE53000A850FD /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		D4A2B1DC25DAE56200A850FD /* HeroDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailCoordinator.swift; sourceTree = "<group>"; };
+		D4A2B1DF25DAFE8200A850FD /* MD5ManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5ManagerTest.swift; sourceTree = "<group>"; };
+		D4A2B1E225DB006100A850FD /* NetworkManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTest.swift; sourceTree = "<group>"; };
+		D4A2B1E525DB053D00A850FD /* HeroDetailViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeroDetailViewTest.swift; path = MarvelHerosTests/HeroDetailViewTest.swift; sourceTree = SOURCE_ROOT; };
+		D4A2B1E725DB066600A850FD /* HeroHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHomeViewController.swift; sourceTree = "<group>"; };
 		D5E5927EAFA7653450B4D149 /* Pods-MarvelHerosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHerosTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelHerosTests/Pods-MarvelHerosTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,7 +167,6 @@
 		D4A2B18725D9D1D200A850FD /* MarvelHeros */ = {
 			isa = PBXGroup;
 			children = (
-				D4A2B1DB25DAE55600A850FD /* Coordinator */,
 				D4A2B1BD25D9D39D00A850FD /* NetworkManager */,
 				D4A2B1B925D9D37300A850FD /* Model */,
 				D4A2B1BA25D9D37800A850FD /* View */,
@@ -180,6 +183,9 @@
 		D4A2B19E25D9D1D500A850FD /* MarvelHerosTests */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2B1E425DB052D00A850FD /* View */,
+				D4A2B1E125DB003F00A850FD /* NetworkManager */,
+				D4A2B1DE25DAFE0800A850FD /* Infra */,
 				D4A2B19F25D9D1D500A850FD /* MarvelHerosTests.swift */,
 				D4A2B1A125D9D1D500A850FD /* Info.plist */,
 			);
@@ -220,7 +226,6 @@
 				D4A2B18825D9D1D200A850FD /* AppDelegate.swift */,
 				D4A2B18A25D9D1D200A850FD /* SceneDelegate.swift */,
 				D4A2B1C625DA046E00A850FD /* MD5Manager.swift */,
-				D4A2B1D925DAE53000A850FD /* BaseCoordinator.swift */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -260,12 +265,29 @@
 			path = HeroDetailView;
 			sourceTree = "<group>";
 		};
-		D4A2B1DB25DAE55600A850FD /* Coordinator */ = {
+		D4A2B1DE25DAFE0800A850FD /* Infra */ = {
 			isa = PBXGroup;
 			children = (
-				D4A2B1DC25DAE56200A850FD /* HeroDetailCoordinator.swift */,
+				D4A2B1DF25DAFE8200A850FD /* MD5ManagerTest.swift */,
 			);
-			path = Coordinator;
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		D4A2B1E125DB003F00A850FD /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				D4A2B1E225DB006100A850FD /* NetworkManagerTest.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		D4A2B1E425DB052D00A850FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4A2B1E525DB053D00A850FD /* HeroDetailViewTest.swift */,
+				D4A2B1E725DB066600A850FD /* HeroHomeViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,8 +538,6 @@
 				D4A2B1C125D9E96400A850FD /* HeroModel.swift in Sources */,
 				D4A2B18925D9D1D200A850FD /* AppDelegate.swift in Sources */,
 				D4A2B1D025DACD7000A850FD /* HeroCollectionViewCell.swift in Sources */,
-				D4A2B1DA25DAE53000A850FD /* BaseCoordinator.swift in Sources */,
-				D4A2B1DD25DAE56200A850FD /* HeroDetailCoordinator.swift in Sources */,
 				D4A2B1C725DA046E00A850FD /* MD5Manager.swift in Sources */,
 				D4A2B1D425DAE23B00A850FD /* HeroDetailViewController.swift in Sources */,
 				D4A2B1CB25DA330A00A850FD /* HeroTableViewCell.swift in Sources */,
@@ -529,7 +549,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A2B1E325DB006100A850FD /* NetworkManagerTest.swift in Sources */,
+				D4A2B1E025DAFE8200A850FD /* MD5ManagerTest.swift in Sources */,
 				D4A2B1A025D9D1D500A850FD /* MarvelHerosTests.swift in Sources */,
+				D4A2B1E625DB053D00A850FD /* HeroDetailViewTest.swift in Sources */,
+				D4A2B1E825DB066600A850FD /* HeroHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
