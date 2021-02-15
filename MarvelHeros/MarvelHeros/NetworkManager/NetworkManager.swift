@@ -16,7 +16,7 @@ enum ResultStatus {
 
 protocol NetworkManagerProtocol {
     var resultHeros: [HeroModel] { get }
-    func requestData(completionHandler: @escaping ((ResultStatus,[HeroModel]?) -> Void))
+    func requestData(offset: Int,completionHandler: @escaping ((ResultStatus,[HeroModel]?) -> Void))
     func downloadImage(from url: URL) -> Data
 }
 
@@ -25,32 +25,34 @@ class NetworkManager: NetworkManagerProtocol {
     var resultHeros: [HeroModel] = [HeroModel]()
     private let publicKey: String = "4aedd955fbdad2c757b38f4b1f6e0d12"
     private let privateKey: String = "3651d395ae9b0cd14cc9130ebacc47dc3f6488e5"
-    private var timeStemp: String = "1"
+    private var timeStemp: String = String(describing: Int(Date().timeIntervalSince1970))
     private var md5Manager = MD5Manager()
     private let group = DispatchGroup()
 
     
-    func requestData(completionHandler: @escaping ((ResultStatus,[HeroModel]?) -> Void)) {
+    func requestData(offset: Int, completionHandler: @escaping ((ResultStatus,[HeroModel]?) -> Void)) {
 
         let md5DataHex = getMD5Hash(timeStemp: timeStemp,
                                     privateKey: privateKey,
                                     publicKey: publicKey)
         
-        let parameters = ["apikey": "4aedd955fbdad2c757b38f4b1f6e0d12",
+        let parameters = ["apikey": self.publicKey,
                           "ts": "\(timeStemp)",
-                          "hash": "\(md5DataHex)"]
+                          "hash": "\(md5DataHex)",
+                          "offset": "\(offset)"]
   
-        group.enter()
+//        group.enter()
         
-        AF.request("https://gateway.marvel.com:443/v1/public/characters?orderBy=name&limit=10",
+        AF.request("http://gateway.marvel.com/v1/public/characters?orderBy=name&limit=10",
                    method: .get,
                    parameters: parameters).validate().responseJSON  { response in
                     
-                    self.group.leave()
+//                    self.group.leave()
                     switch response.result {
                     case .success(let data):
                         self.unwrapJson(data: data)
                         completionHandler(.success, self.resultHeros)
+                        self.resultHeros = [HeroModel]()
                     case .failure(let error):
                         completionHandler(.failure, nil)
                         print(error)
@@ -93,9 +95,9 @@ class NetworkManager: NetworkManagerProtocol {
         
     func downloadImage(from url: URL) -> Data {
         var imageData: Data?
-        group.enter()
+//        group.enter()
         imageData = try? Data(contentsOf: url)
-        self.group.leave()
+//        self.group.leave()
         return imageData ?? Data()
     }
 }
