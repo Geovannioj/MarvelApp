@@ -21,12 +21,15 @@ class HeroHomeViewController: UIViewController {
     let callDataAtOffset = 5
     let tableViewCellHeight = 200
     let networkManager: NetworkManagerProtocol = NetworkManager()
+    var navBar: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         setCollectionView()
         bindData(offset: 0)
+        
+        self.navBar = UINavigationController()
         
     }
     
@@ -73,6 +76,15 @@ class HeroHomeViewController: UIViewController {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
     }
+    
+    func presentDetailView(heroIndex: Int) {
+        let nib = UINib(nibName: "HeroDetailView", bundle:nil)
+        let myVC = nib.instantiate(withOwner: self, options: nil)[0] as? HeroDetailViewController
+    
+        myVC?.hero = heros[heroIndex]
+        myVC?.viewDidLoad()
+        self.present(myVC!, animated: true, completion: nil)
+    }
 }
 //MARK: - Tableview delegate and Datasource
 extension HeroHomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -107,6 +119,14 @@ extension HeroHomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        var offsetIndex = 0
+        if indexPath.row < 5 {
+            offsetIndex = indexPath.row + callDataAtOffset
+        } else {
+            offsetIndex = indexPath.row
+        }
+        
+        presentDetailView(heroIndex: (offsetIndex))
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -140,6 +160,11 @@ extension HeroHomeViewController: UICollectionViewDataSource, UICollectionViewDe
         
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        presentDetailView(heroIndex: indexPath.row)
     }
 }
 
