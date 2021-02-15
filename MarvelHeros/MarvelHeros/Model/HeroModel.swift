@@ -13,5 +13,6 @@ struct HeroModel {
     var description: String
     var imagePath: String
     var imageExtension: String
+    var imageData: Data?
     
 }
